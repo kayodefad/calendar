@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
   margin-top: 3rem;
@@ -8,38 +8,60 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
-  align-items: center;
-  background: green;
-  gap: 30px;
+  flex-direction: column;
+  gap: 20px;
+  background: #0c3738;
   padding: 20px;
-  border-right: 7px solid blue;
-  border-left: 7px solid blue;
+  border-right: 7px solid #1b598d;
+  border-left: 7px solid #1b598d;
 
-  .icon-wrapper {
-    width: 25px;
-    cursor: pointer;
+  .calendar-header {
+    color: #bdf0cc;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
   }
 
-  .date-wrapper {
-    border-radius: 50px;
+  .calendar-body {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    background-color: white;
-    width: 60px;
-    height: 90px;
-  }
+    gap: 30px;
 
-  .day {
-    color: #bdf0cc;
-    font-weight: 900;
-  }
+    .icon-wrapper {
+      width: 25px;
+      cursor: pointer;
+    }
 
-  .date {
-    color: #bdf0cc;
-    text-transform: capitalize;
+    .date-wrapper {
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      width: 60px;
+      height: 90px;
+      color: #bdf0cc;
+
+      &.selected {
+        background-color: #fff;
+        color: #1b598d;
+      }
+
+      &.today {
+        color: #fff;
+        background-color: #1b598d;
+        pointer-events: none;
+      }
+    }
+
+    .day {
+      font-weight: 900;
+    }
+
+    .date {
+      text-transform: capitalize;
+    }
   }
 `;

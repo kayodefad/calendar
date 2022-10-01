@@ -1,10 +1,7 @@
-import React from 'react'
-import { Container } from './HeaderStyles'
+import { Container } from "./HeaderStyles";
 
 const Header = () => {
-  return (
-    <Container>Horizontal Calendar</Container>
-  )
-}
+  return <Container>Horizontal Calendar</Container>;
+};
 
-export default Header
+export default Header;
