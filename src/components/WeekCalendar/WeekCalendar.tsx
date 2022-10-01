@@ -25,37 +25,39 @@ const WeekCalendar = () => {
           </div>
         )}
         <div className="calendar-body">
-          <div
-            onClick={() => setDate(addDays(week[0].date, -7))}
-            className="icon-wrapper"
-          >
-            <ChevronLeft />
-          </div>
-          {week.map((weekDay) => {
-            const today = isToday(weekDay.date);
-            const sameday = isSameDay(weekDay.date, selected);
+          <div className="calendar-body-content">
+            <div
+              onClick={() => setDate(addDays(week[0].date, -7))}
+              className="icon-wrapper"
+            >
+              <ChevronLeft />
+            </div>
+            {week.map((weekDay) => {
+              const today = isToday(weekDay.date);
+              const sameday = isSameDay(weekDay.date, selected);
 
-            return (
-              <div
-                className={`date-wrapper ${
-                  today ? "today" : sameday ? "selected" : ""
-                }`}
-                key={weekDay.formatted}
-                onClick={() => setSelected(weekDay.date)}
-              >
-                <p className="day">{weekDay.formatted}</p>
-                <p className="date">{weekDay.day}</p>
-              </div>
-            );
-          })}
-          <div
-            onClick={() => setDate(addDays(week[0].date, 7))}
-            className="icon-wrapper"
-          >
-            <ChevronRight />
+              return (
+                <div
+                  className={`date-wrapper ${
+                    today ? "today" : sameday ? "selected" : ""
+                  }`}
+                  key={weekDay.formatted}
+                  onClick={() => setSelected(weekDay.date)}
+                >
+                  <p className="day">{weekDay.formatted}</p>
+                  <p className="date">{weekDay.day}</p>
+                </div>
+              );
+            })}
+            <div
+              onClick={() => setDate(addDays(week[0].date, 7))}
+              className="icon-wrapper"
+            >
+              <ChevronRight />
+            </div>
           </div>
         </div>
-        <div className="calendar-header">
+        <div className="calendar-footer">
           {format(selected, "MMMM d,  yyyy")}
         </div>
       </Wrapper>
