@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  margin-top: 3rem;
-`;
+export const Container = styled.div``;
 
 export const Wrapper = styled.div`
   display: flex;

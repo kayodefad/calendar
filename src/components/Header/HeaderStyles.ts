@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.header`
   height: 70px;
   display: flex;
   align-items: center;
@@ -9,4 +9,5 @@ export const Container = styled.div`
   padding: 0 2rem;
   font-size: 20px;
   font-weight: 600;
+  margin-bottom: 3rem;
 `;

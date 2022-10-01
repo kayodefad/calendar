@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { addDays, format, isSameDay, isToday } from "date-fns";
+import classNames from "classnames";
 import { Container, Wrapper } from "./WeekCalendarStyles";
 import ChevronLeft from "../../shared/icons/ChevronLeft";
 import ChevronRight from "../../shared/icons/ChevronRight";
@@ -38,9 +39,10 @@ const WeekCalendar = () => {
 
               return (
                 <div
-                  className={`date-wrapper ${
-                    today ? "today" : sameday ? "selected" : ""
-                  }`}
+                  className={classNames("date-wrapper", {
+                    today,
+                    selected: sameday,
+                  })}
                   key={weekDay.formatted}
                   onClick={() => setSelected(weekDay.date)}
                 >
